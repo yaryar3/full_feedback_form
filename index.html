@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/select.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<title>Техническая поддержка</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="form">
+				<form action="#" id="form" class="form__body">
+					<h1 class="form__title">Техническая поддержка</h1>
+					<!--<h4>Все поля обязательны для заполнения</h4>-->
+					<div class="form__item">
+						<label for="formName" class="form__label">ФИО:</label>
+						<input id="formName" type="text" name="name" class="form__input _req">
+					</div>
+					
+					<div class="form__item">
+						<label for="formEmail" class="form__label">E-mail:</label>
+						<input id="formEmail" type="text" name="email" class="form__input _req _email">
+					</div>
+
+					<div class="form-item">
+						<label for="formPhone" class="form__label">Телефон:</label>
+						<input id="formPhone" type="text" name="phone"  pattern="\+\d-\d{3}-\d{3}-\d{2}-\d{2}" class="form__input _req" placeholder="+7-999-999-99-99">
+					</div>
+					
+					<div class="form__item">
+						<div class="form__label">Социальные сети:</div>
+						<select name="select1" class="form__select" id="select1"  required="required">
+							<option style='color:#CCCCCC;' value="-Категория запроса-">-Выбрать сеть-</option>
+				            <option value="Нет доступа к курсу">Instagram</option>
+				            <option value="Вопрос по отправке материалов">Vk</option>
+				            <option value="Вопрос по оплате">Twitter</option>
+				            <option value="Я выпускник">Facebook</option>
+				            <option value="Доступ к платформе по загрузке портфеля">Tik-tok</option>
+						</select>
+					</div>
+
+					<div class="form_item" id="instagram">
+						<label for="formInsta" id="instaLabel" class="form__label">Ник в инстаграмме:</label>
+						<input name="inst" id="insta" type="text" class="form__input" pattern="^[a-zA-Z0-9_.]{1,30}$">
+					</div>
+					
+					<div class="form__item">
+						
+						<div class="file">
+							<div class="file__item">
+								<input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input _req">
+								<div class="file__button">Прикрепить скриншот</div>
+							</div>
+							<div id="formPreview" class="file__preview"></div>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__label">По какому продукту вопрос:</div>
+						<select name="select2" class="form__select" id="select2" required>
+							<option>-по какому продукту вопрос-</option>
+                            <option>1</option>
+				            <option>2</option>
+				            <option>3</option>
+						</select>
+					</div>
+
+					<div class="form__item">
+						<label for="formMessage" class="form__label">Сообщение:</label>
+						<textarea name="message" id="formMessage" class="form__input _req"></textarea>
+					</div>
+					
+					<button type="submit" class="form__button">Заявка</button>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+let select = document.querySelector('#select1'),
+	instagram = document.querySelector('#instagram');
+	
+
+function init() {
+    select.options[0].selected=true;
+    instagram.style.display = 'none';
+}
+init();
+
+select.addEventListener('change', function() {
+	var ind = select.selectedIndex;
+    
+   
+	if (ind==1) {
+		instagram.style.display = 'block';
+
+	} else {
+		instagram.style.display = 'none';
+	}
+});
+
+		</script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

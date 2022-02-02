@@ -1,0 +1,14 @@
+.select {
+	position: relative;
+}
+
+#select1, #select2 {
+	display: flex;
+	font-size: 16px;
+	height: 40px;
+	width: 100%;
+	padding: 0px 20px;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}
